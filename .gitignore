@@ -1,0 +1,7 @@
+#Ignore build
+build/
+.cache/
+
+#ignore dummy and cmake
+dummy.txt
+CMakeLists.txt.user

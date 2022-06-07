@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>resources/LoginPage.qml</file>
+        <file>resources/TasksPage.qml</file>
+        <file>resources/KanbanPage.qml</file>
+        <file>resources/TextFieldWithWarning.qml</file>
+        <file>resources/TaskInsertDialog.qml</file>
+        <file>resources/DialogChecker.js</file>
+        <file>resources/TaskListView.qml</file>
+        <file>resources/baseline-menu-24px.svg</file>
+        <file>qtquickcontrols2.conf</file>
+    </qresource>
+</RCC>
