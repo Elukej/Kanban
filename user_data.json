@@ -1,0 +1,62 @@
+{
+	"users": [
+		{
+			"name": "Luka",
+			"password": "bonbon",
+			"uuid": "1",
+			"isAdmin": true,
+			"tasks":[
+					{
+						"title": "main work",
+						"description": "just some ordinary work",
+						"startDate": "23.05.2022",
+						"estimation": "31.05.2022",
+						"status": "In progress"
+					},
+					{
+						"title": "learn Qt",
+						"description": "difficult and tedious task",
+						"startDate": "11.04.2022",
+						"estimation": "22.04.2080",
+						"status": "To Do"
+					},
+					{
+						"title": "Wrestle with QML",
+						"description": "Doing declarative daily duties diligently",
+						"startDate": "20.04.2022",
+						"estimation": "28.06.2022",
+						"status": "Blocked"
+					}
+				]
+		},
+		{
+			"name": "Arijan",
+			"password": "ovcica",
+			"uuid": "2",
+			"isAdmin": false,
+			"tasks":[
+					{
+						"title": "main work",
+						"description": "just some ordinary work",
+						"startDate": "23.05.2022",
+						"estimation": "31.05.2022",
+						"status": "In progress"
+					},
+					{
+						"title": "Preach Qt",
+						"description": "because he is a parrot",
+						"startDate": "11.04.2022",
+						"estimation": "22.04.2080",
+						"status": "To Do"
+					},
+					{
+						"title": "Learn CMAKE",
+						"description": "Is due time to grow up",
+						"startDate": "20.04.2022",
+						"estimation": "28.06.2022",
+						"status": "Blocked"
+					}
+				]
+		}	
+	]
+}
