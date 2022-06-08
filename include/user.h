@@ -15,7 +15,7 @@ class User {
         void setName(QString s) { m_name = s; }
         QString password() const { return m_password; }
         void setPassword(QString p) { m_password = p; }
-        quint32 uuid() const { return m_uuid; } 
+        int uuid() const { return m_uuid; } 
         void setUuid(quint32 num) { m_uuid = num; }
         bool isAdmin() const { return m_isAdmin; }
         QList<Task> tasks() const { return m_tasks; }
@@ -28,7 +28,7 @@ class User {
     private:
         QString m_name;
         QString m_password;
-        quint32 m_uuid;
+        int m_uuid;
         bool m_isAdmin;
         QList<Task> m_tasks;
 };

@@ -20,12 +20,14 @@ set(HEADERS
     include/task.h
     include/user.h
     include/taskListModel.h
+    include/taskStrategy.h
 )
 
 set(PROJECT_SOURCES
         main.cpp
         lib/taskListModel.cpp
         lib/mainSingleton.cpp
+        lib/taskStrategy.cpp
         qml.qrc
         ${HEADERS}
 )

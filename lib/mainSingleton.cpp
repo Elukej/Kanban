@@ -17,15 +17,29 @@ void MainSingleton::setModel(TaskListModel *m)
 
 bool MainSingleton::loginInit(QString username, QString pass)
 {
-    // if (this->user = this->strategy->execute(username, pass)) return true;
-    // gornja linija treba da bude rezultat uspesno implementiranog backenda
-    if (this->user()->name() == username && this->user()->password() == pass) { // for now, to test frontend
+   
+    if (auto user = this->strategy()->executeRead(username, pass)) {
+        auto &usr = user.value();
+        this->setUser(new User(usr.name(), usr.password(), usr.uuid(), usr.isAdmin(), usr.tasks()));
         this->setModel(new TaskListModel());
         this->model()->setData(this->user()->tasks());
         connect(this->model(), &TaskListModel::dataChanged, this, &MainSingleton::updateUser);
         return true;
     }
+
+
+   /*if (this->user()->name() == username && this->user()->password() == pass) { // for now, to test frontend
+        this->setModel(new TaskListModel());
+        this->model()->setData(this->user()->tasks());
+        connect(this->model(), &TaskListModel::dataChanged, this, &MainSingleton::updateUser);
+        return true;
+    }*/
     return false;
+}
+
+bool MainSingleton::logout(/*QString fileName*/)
+{
+    return this->strategy()->executeWrite(*(this->user()));
 }
 
 void MainSingleton::updateUser(QModelIndex index)

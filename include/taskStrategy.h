@@ -1,20 +1,23 @@
 #include <optional>
-#include <qjsondocument.h>
 #include <user.h>
 #include <task.h>
 #include <QJsonDocument>
 
+#ifndef TASKSTRATEGY_H
+#define TASKSTRATEGY_H
 class TaskStrategy {
     public:
-        virtual std::optional<User> executeRead(const QString userName, const QString password) = 0;
-        virtual void executeWrite(const User &user) = 0;
+        virtual std::optional<User> 
+        executeRead(const QString userName, const QString password) 
+            { return std::nullopt; };
+        virtual bool executeWrite(const User &user) { return false;};
 };
 
 class LocalJsonStrategy : public TaskStrategy {
 
     public:
-        virtual std::optional<User> executeRead(const QString userName, const QString password) override;
-        virtual void executeWrite(const User &user) override;
+        std::optional<User> executeRead(const QString userName, const QString password) override;
+        bool executeWrite(const User &user) override;
 
         LocalJsonStrategy(QString fileName);
         bool readDocFromFile(QString fileName);
@@ -25,3 +28,5 @@ class LocalJsonStrategy : public TaskStrategy {
     private:
         QJsonDocument m_doc;
 };
+
+#endif // TASKSTRATEGY_H

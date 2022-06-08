@@ -1,0 +1,69 @@
+{
+    "users": [
+        {
+            "isAdmin": true,
+            "name": "Luka",
+            "password": "bonbon",
+            "tasks": [
+                {
+                    "description": "just some ordinary work",
+                    "estimation": "31.05.2022",
+                    "startDate": "23.05.2022",
+                    "status": "To Do",
+                    "title": "main work"
+                },
+                {
+                    "description": "difficult and tedious task",
+                    "estimation": "22.04.2080",
+                    "startDate": "11.04.2022",
+                    "status": "In Progress",
+                    "title": "learn Qt"
+                },
+                {
+                    "description": "Doing declarative daily duties diligently",
+                    "estimation": "28.06.2022",
+                    "startDate": "20.04.2022",
+                    "status": "In Progress",
+                    "title": "Wrestle with QML"
+                },
+                {
+                    "description": "Somehow, somewhere",
+                    "estimation": "12.01.2023",
+                    "startDate": "01.01.2022",
+                    "status": "In Progress",
+                    "title": "Heal the world"
+                }
+            ],
+            "uuid": 1
+        },
+        {
+            "isAdmin": false,
+            "name": "Arijan",
+            "password": "ovcica",
+            "tasks": [
+                {
+                    "description": "just some ordinary work",
+                    "estimation": "31.05.2022",
+                    "startDate": "23.05.2022",
+                    "status": "In Progress",
+                    "title": "main work"
+                },
+                {
+                    "description": "because he is a parrot",
+                    "estimation": "22.04.2080",
+                    "startDate": "11.04.2022",
+                    "status": "To Do",
+                    "title": "Preach Qt"
+                },
+                {
+                    "description": "Is due time to grow up",
+                    "estimation": "28.06.2022",
+                    "startDate": "20.04.2022",
+                    "status": "Blocked",
+                    "title": "Learn CMAKE"
+                }
+            ],
+            "uuid": 2
+        }
+    ]
+}

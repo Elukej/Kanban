@@ -8,6 +8,7 @@
 #include <qqmlengine.h>
 #include "user.h"
 #include "taskListModel.h"
+#include "taskStrategy.h"
 
 #ifndef MAINSINGLETON_H
 #define MAINSINGLETON_H
@@ -24,9 +25,12 @@ class MainSingleton : public QObject { //singleton dizajn patern
         void setUser(User *u) { m_user = std::unique_ptr<User>(u); } 
         TaskListModel* model() const { return m_model.get(); }
         void setModel(TaskListModel *m);
+        TaskStrategy* strategy() const { return m_strategy.get(); }
+        void setStrategy(TaskStrategy *s) 
+            { m_strategy = std::unique_ptr<TaskStrategy>(s);}
         
         Q_INVOKABLE bool loginInit(QString username, QString pass);
-        //Q_INVOKABLE QObject* componentByName(QObject *parent, QString name);
+        Q_INVOKABLE bool logout(/*QString fileName*/);
 
     signals:
         void modelChanged();
@@ -37,6 +41,7 @@ class MainSingleton : public QObject { //singleton dizajn patern
         static MainSingleton *instance;
         std::unique_ptr<User> m_user;
         std::unique_ptr<TaskListModel> m_model;
+        std::unique_ptr<TaskStrategy> m_strategy;
 };
 
 #endif // MAINSINGLETON_H

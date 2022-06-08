@@ -4,6 +4,7 @@ import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
 import "resources"
 import QtQuick.Controls.Material 2.15
+import MainSingleton 1.0
 
 ApplicationWindow {
     id: root
@@ -92,6 +93,7 @@ ApplicationWindow {
                 width: drawer.width
                 font.pointSize: 14
                 onClicked: {
+                    MainSingleton.logout()
                     drawer.close()
                     header.visible = false
                     stackView.pop(null)

@@ -49,13 +49,15 @@ int main(int argc, char *argv[])
                             QDate(2022,6,28), 
                             QString("Blocked") )
                         };
-    mainSingleton->setUser(new User(QString("Luka"), QString("bonbon"), quint32(1), true, tasks));
+    
+    mainSingleton->setStrategy(new LocalJsonStrategy("../user_data.json"));
+    //mainSingleton->setUser(new User(QString("Luka"), QString("bonbon"), quint32(1), true, tasks));
 
-    qDebug() << mainSingleton->user()->name() << Qt::endl << 
-                mainSingleton->user()->tasks()[2].description() << Qt::endl;
+    /* qDebug() << mainSingleton->user()->name() << Qt::endl << 
+               mainSingleton->user()->tasks()[2].description() << Qt::endl; */
 
 
-    QFile usersFile("../user_data.json"); //need to be very careful since this path depends on the place from which we start the program
+ /*   QFile usersFile("../user_data.json"); //need to be very careful since this path depends on the place from which we start the program
     if (!usersFile.open(QIODevice::ReadOnly)) {
         qWarning("Couldn't open save file.");
         return EXIT_FAILURE;
@@ -65,7 +67,7 @@ int main(int argc, char *argv[])
     QJsonDocument doc(QJsonDocument::fromJson(usersAsBytes));
     QJsonArray array = doc["users"].toArray();
     QJsonObject obj = array[1].toObject();
-    qDebug() <<  obj["tasks"].toArray()[1].toObject()["title"].toString() << Qt::endl;
+    qDebug() <<  obj["tasks"].toArray()[1].toObject()["title"].toString() << Qt::endl;*/
 
 /////////////////////////////////////////////////////////////////////////////
     

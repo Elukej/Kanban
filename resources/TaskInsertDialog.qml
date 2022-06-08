@@ -51,6 +51,7 @@ Dialog {
         let messages = DialogChecker.checkDialog(columnLayout);
         let hasErrors = false;
         let i = -1;
+
         for (var mes in messages) {
             i++;
             if (messages[mes] === true) {
@@ -61,7 +62,7 @@ Dialog {
             columnLayout.children[i].warningVisible = true;
             hasErrors = true;
         }
-        
+
         if (task != {} && !hasErrors) {
             if (!editMode) MainSingleton.model.append(task)
             else MainSingleton.model.update(editIndex, task)
