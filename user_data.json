@@ -23,7 +23,7 @@
                     "description": "Doing declarative daily duties diligently",
                     "estimation": "28.06.2022",
                     "startDate": "20.04.2022",
-                    "status": "In Progress",
+                    "status": "Blocked",
                     "title": "Wrestle with QML"
                 },
                 {
@@ -32,6 +32,13 @@
                     "startDate": "01.01.2022",
                     "status": "In Progress",
                     "title": "Heal the world"
+                },
+                {
+                    "description": "in due time",
+                    "estimation": "12.05.2023",
+                    "startDate": "01.01.2022",
+                    "status": "To Do",
+                    "title": "Become Vim preacher"
                 }
             ],
             "uuid": 1

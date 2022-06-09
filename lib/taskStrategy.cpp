@@ -98,8 +98,6 @@ bool LocalJsonStrategy::executeWrite(const User &user)
         QJsonObject task;
         qDebug() << it->title() << Qt::endl;
         task["title"] =  (it->title());
-                            qDebug() << "I STILL WORK!" << Qt::endl;
-                        
         task["description"] = it->description();
         task["startDate"] = it->startDate().toString("dd.MM.yyyy");
         task["estimation"] = it->estimation().toString("dd.MM.yyyy");

@@ -19,7 +19,7 @@ DropArea {
     onDropped: { //signal is dropped(drop)
         console.log("item dropped in " + headerText + " drop area")
         drop.source["delegateStatus"] = root.status //delegateStatus is changed in order for its change handler to update the model
-        drop.source["background"]["color"] = drop.source.ListView.view.headerItem["color"]
+        //drop.source["background"]["color"] = drop.source.ListView.view.headerItem["color"] // i leave this a s a reminder how to access javascript objects
         // we return the color of the delegate to its list view creator so the colors dont get messed up, since qt is caching delegates
         //drop.source is delegate item as a js object
     }
@@ -80,7 +80,7 @@ DropArea {
                         parent.Drag.drop() // This isnt written in documentation!!! This function needs to be manually called in order for the recipient of drop event to be notified
                         itemDelegate.x = itemDelegate.xBeforeDrag //we return delegate to its position in the listview in which it belongs where it wont be rendered if its status has changed
                         itemDelegate.y = itemDelegate.yBeforeDrag
-                        //itemDelegate.background.color = parent.Drag.target.borderColor
+                        itemDelegate.background.color = parent.ListView.view.headerItem["color"]
                     }
                     onPressed: {
                         xBeforeDrag = itemDelegate.x //we remember the coordinates of item when we start dragging it
