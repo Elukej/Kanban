@@ -8,7 +8,7 @@ DropArea {
     property var headerText: "" //cant be aliased so the text in header will follow this value
     property var status: "" // value of status (To Do, In Progress, Blocked, Done)
     property var borderColor: ""
-    width: parent.width/4 - 1
+    width: parent.width/4 - 0.75 * parent.spacing // component meant to be inside row 
     height: parent.height
     onEntered: { // signal is entered(drag)
         console.log(headerText + " drop area entered")

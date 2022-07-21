@@ -34,6 +34,7 @@ void TaskListModel::insert(int index, const QVariantMap &task)
     auto qindex = QAbstractItemModel::createIndex(index,index, this);
     emit dataChanged(qindex, qindex,
               { Qt::UserRole, Qt::UserRole+1, Qt::UserRole+2, Qt::UserRole+3, Qt::UserRole+4});
+    //the way i use this signal here is a bit of a fluke, but it serves purpose since i dont move stuff inside the model, just edit and append
 }
 
 

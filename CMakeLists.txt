@@ -12,6 +12,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
+find_package(SQLite3)
 find_package(QT NAMES Qt6 Qt5 COMPONENTS Core Quick REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Core Quick QuickControls2 REQUIRED)
 
@@ -55,11 +56,11 @@ else()
     endif()
 endif()
 
-target_include_directories(kanban PRIVATE ${PROJECT_SOURCE_DIR}/include)
+target_include_directories(kanban PRIVATE ${PROJECT_SOURCE_DIR}/include ${SQLite3_INCLUDE_DIRS})
 target_compile_definitions(kanban
   PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
 target_link_libraries(kanban
-	PRIVATE Qt${QT_VERSION_MAJOR}::Core Qt${QT_VERSION_MAJOR}::Quick Qt${QT_VERSION_MAJOR}::QuickControls2)
+	PRIVATE Qt${QT_VERSION_MAJOR}::Core Qt${QT_VERSION_MAJOR}::Quick Qt${QT_VERSION_MAJOR}::QuickControls2 ${SQLite3_LIBRARIES})
 
 
 set_target_properties(kanban PROPERTIES

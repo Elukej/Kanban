@@ -6,6 +6,7 @@
 
 class User {
     public:
+        User() {}
         User(QString n, QString p, quint32 u, bool is, const QList<Task> &t)
             : m_name(n), m_password(p), m_uuid(u), m_isAdmin(is) {
                 m_tasks.clear();
@@ -16,9 +17,10 @@ class User {
         QString password() const { return m_password; }
         void setPassword(QString p) { m_password = p; }
         int uuid() const { return m_uuid; } 
-        void setUuid(quint32 num) { m_uuid = num; }
+        void setUuid(int num) { m_uuid = num; }
         bool isAdmin() const { return m_isAdmin; }
-        QList<Task> tasks() const { return m_tasks; }
+        void setIsAdmin(bool val) { m_isAdmin = val; }
+        const QList<Task> tasks() const { return m_tasks; }
         void setTasks(QList<Task> &t) { m_tasks = t; }
         void appendTask(Task &t) { m_tasks.append(t); }
         void insertTask(int index, const Task &t) { m_tasks.insert(index, t); }

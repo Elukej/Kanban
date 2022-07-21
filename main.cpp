@@ -49,8 +49,9 @@ int main(int argc, char *argv[])
                             QDate(2022,6,28), 
                             QString("Blocked") )
                         };
-    
-    mainSingleton->setStrategy(new LocalJsonStrategy("../user_data.json"));
+
+    mainSingleton->setStrategy(new LocalSQLStrategy("../kanban.db"));
+    //mainSingleton->setStrategy(new LocalJsonStrategy("../user_data.json"));
     //mainSingleton->setUser(new User(QString("Luka"), QString("bonbon"), quint32(1), true, tasks));
 
     /* qDebug() << mainSingleton->user()->name() << Qt::endl << 
